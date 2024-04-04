@@ -20,7 +20,7 @@ export default function PlacesScreen() {
   const [dropCity, setDropCity] = useState("");
 
   useEffect(() => {
-    fetch(`http://192.168.1.68:3000/places/${user.nickname}`)
+    fetch(`http://locapic-backend-mu.vercel.app/places/${user.nickname}`)
       .then((response) => response.json())
       .then((data) => {
         for (let i of data.places) {
@@ -30,7 +30,7 @@ export default function PlacesScreen() {
   }, []);
 
   const handleDelete = (placeName) => {
-    fetch("http://192.168.1.68:3000/places", {
+    fetch("http:/locapic-backend-mu.vercel.app/places", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nickname: user.nickname, name: placeName }),
@@ -54,7 +54,7 @@ export default function PlacesScreen() {
           latitude: firstCity.geometry.coordinates[1],
           longitude: firstCity.geometry.coordinates[0],
         };
-        fetch("http://192.168.1.68:3000/places", {
+        fetch("http://locapic-backend-mu.vercel.app/places", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

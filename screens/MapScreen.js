@@ -5,7 +5,7 @@ import { addPlace, importPlaces } from '../reducers/user';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 
-const BACKEND_ADDRESS = 'http://192.168.1.68:3000';
+const BACKEND_ADDRESS = 'http://locapic-backend-mu.vercel.app';
 
 export default function MapScreen() {
   const dispatch = useDispatch();
